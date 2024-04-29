@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+	<style>
+		body {
+			background: #f0f0f0;
+			font-family: 'Roboto', sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+		.container {
+			width: 300px;
+			padding: 20px;
+			background: #fff;
+			border-radius: 10px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+		input {
+			width: calc(100% - 20px);
+			height: 40px;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 10px;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px;
+		}
+		button {
+			width: calc(100% - 20px);
+			padding: 10px;
+			border-radius: 5px;
+			background: #4CAF50;
+			color: white;
+			border: none;
+			cursor: pointer;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		button:hover {
+			background: #45a049;
+		}
+		.result {
+			margin-top: 20px;
+			font-family: 'Roboto', sans-serif;
+			font-size: 18px;
+			font-weight: 700;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Find the Larger Number or Equal</h2>
+		<p>Enter the first number</p>
+		<input type="text" id="num1"><br>
+		<p>Enter the second number</p>
+		<input type="text" id="num2"><br>
+		<button onclick="findLarger()">Calculate</button><br>
+		<p class="result" id="result"></p>
+	</div>
+
+	<script>
+		function findLarger() {
+			var num1 = parseInt(document.getElementById("num1").value);
+			var num2 = parseInt(document.getElementById("num2").value);
+			if (isNaN(num1) || isNaN(num2)) {
+				document.getElementById("result").innerHTML = "Please enter valid numbers";
+			} else if (num1 === num2) {
+				document.getElementById("result").innerHTML = "Numbers are equal";
+			} else if (num1 > num2) {
+				document.getElementById("result").innerHTML = "The larger number is " + num1;
+			} else {
+				document.getElementById("result").innerHTML = "The larger number is " + num2;
+			}
+		}
+	</script>
+</body>
+</html>
